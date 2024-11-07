@@ -1,23 +1,13 @@
 public class App {
     public static void main(String[] args) {
+        Pessoa gabriel = new Pessoa("Gabriel", null, null);
+        Pessoa eduardo = new Pessoa("Eduardo", null, null);
+        Pessoa marcela = new Pessoa("Marcela", gabriel, eduardo);
+        Pessoa malu = new Pessoa("Malu", gabriel, eduardo);
+        Pessoa barbara = new Pessoa("Barbara", gabriel, eduardo);
+        Pessoa aline = new Pessoa("Aline", gabriel, eduardo);
 
-        java.util.LinkedList<Partida> partidas = new java.util.LinkedList<Partida>();
-
-        Team fla = new Team("Flalixo", 5);
-        Team vasc = new Team("Vasco ", 2);
-        Team flu = new Team("Fluminensy", 3);
-
-        Partida p1 = new Partida(fla, vasc);
-        Partida p2 = new Partida(flu, vasc);
-        partidas.add(p1);
-        partidas.add(p2);
-
-        System.out.println("\nLista de partidas:");
-        for(Partida p : partidas) {
-            System.out.print("\t" + p.getTeamA().getTeamName());
-            System.out.print(" x ");
-            System.out.println(p.getTeamB().getTeamName());
-        }
-        System.out.println("\n");
+        Pessoa raony = new Pessoa("Raony", aline, barbara );
+        raony.printFamilia();
     }
 }
