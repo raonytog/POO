@@ -14,6 +14,8 @@ public class Pessoa {
 
     public void attName(String newName) { this.name = newName; }
 
+    public void setMae(Pessoa newMae) { this.mae = newMae; }
+    public void setPai(Pessoa newPai) { this.pai = newPai; }
     public void setName(String name) { this.name = name; }
     public void printPessoa() { System.out.println(this.name); }
 
@@ -28,10 +30,7 @@ public class Pessoa {
         System.out.println("\nFilho(a): " + getName());
 
         if (getPai() != null) System.out.print("\tPai: " + getPai().getName());
-        // else System.out.print("\tPai: pai desconhecido, ");
-
         if (getMae() != null) System.out.print(", Mae: " + getMae().getName() + "\n");
-        // else System.out.print("mae: mae desconhecida\n");
 
         if (getPai() != null) getPai().printFamilia();
         if (getMae() != null) getMae().printFamilia();
@@ -49,5 +48,21 @@ public class Pessoa {
         if (this.pai != null && getAvoMaterno() != null) avos.add(this.getAvoMaterno());
 
         return avos;
+    }
+
+    public java.util.Set<Pessoa> getAntepassados() {
+        java.util.Set<Pessoa> antepassados = new java.util.HashSet<Pessoa>();
+
+        if (getMae() != null) {
+            antepassados.add(getMae());
+            antepassados.addAll(getMae().getAntepassados());
+        }
+
+        if (getPai() != null) {
+            antepassados.add(getPai());
+            antepassados.addAll(getPai().getAntepassados());
+        }
+
+        return antepassados;
     }
 }
