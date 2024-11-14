@@ -29,23 +29,23 @@ public class Pessoa {
     public void printFamilia() {
         System.out.println("\nFilho(a): " + getName());
 
-        if (getPai() != null) System.out.print("\tPai: " + getPai().getName());
-        if (getMae() != null) System.out.print(", Mae: " + getMae().getName() + "\n");
+        if (this.getPai() != null) System.out.print("\tPai: " + this.getPai().getName());
+        if (this.getMae() != null) System.out.print(", Mae: " + this.getMae().getName() + "\n");
 
-        if (getPai() != null) getPai().printFamilia();
-        if (getMae() != null) getMae().printFamilia();
+        if (this.getPai() != null) this.getPai().printFamilia();
+        if (this.getMae() != null) this.getMae().printFamilia();
     }
 
     public java.util.Set<Pessoa> getAvos() {
         java.util.Set<Pessoa> avos = new java.util.HashSet<Pessoa>();
 
         // da mae
-        if (this.mae != null && getAvoMaterna() != null) avos.add(this.getAvoMaterna());
-        if (this.mae != null && getAvoMaterno() != null) avos.add(this.getAvoMaterno());
+        if (this.getMae() != null && getAvoMaterna() != null) avos.add(this.getAvoMaterna());
+        if (this.getMae() != null && getAvoMaterno() != null) avos.add(this.getAvoMaterno());
 
         // do pai
-        if (this.pai != null && getAvoMaterno() != null) avos.add(this.getAvoMaterno());
-        if (this.pai != null && getAvoMaterno() != null) avos.add(this.getAvoMaterno());
+        if (this.getPai() != null && getAvoMaterno() != null) avos.add(this.getAvoMaterno());
+        if (this.getPai() != null && getAvoMaterno() != null) avos.add(this.getAvoMaterno());
 
         return avos;
     }
@@ -53,14 +53,14 @@ public class Pessoa {
     public java.util.Set<Pessoa> getAntepassados() {
         java.util.Set<Pessoa> antepassados = new java.util.HashSet<Pessoa>();
 
-        if (getMae() != null) {
-            antepassados.add(getMae());
-            antepassados.addAll(getMae().getAntepassados());
+        if (this.getMae() != null) {
+            antepassados.add(this.getMae());
+            antepassados.addAll(this.getMae().getAntepassados());
         }
 
         if (getPai() != null) {
-            antepassados.add(getPai());
-            antepassados.addAll(getPai().getAntepassados());
+            antepassados.add(this.getPai());
+            antepassados.addAll(this.getPai().getAntepassados());
         }
 
         return antepassados;
