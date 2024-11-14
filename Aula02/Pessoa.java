@@ -40,12 +40,12 @@ public class Pessoa {
         java.util.Set<Pessoa> avos = new java.util.HashSet<Pessoa>();
 
         // da mae
-        if (this.getMae() != null && getAvoMaterna() != null) avos.add(this.getAvoMaterna());
-        if (this.getMae() != null && getAvoMaterno() != null) avos.add(this.getAvoMaterno());
+        if (this.getMae() != null && this.getAvoMaterna() != null) avos.add(this.getAvoMaterna());
+        if (this.getMae() != null && this.getAvoMaterno() != null) avos.add(this.getAvoMaterno());
 
         // do pai
-        if (this.getPai() != null && getAvoMaterno() != null) avos.add(this.getAvoMaterno());
-        if (this.getPai() != null && getAvoMaterno() != null) avos.add(this.getAvoMaterno());
+        if (this.getPai() != null && this.getAvoMaterno() != null) avos.add(this.getAvoMaterno());
+        if (this.getPai() != null && this.getAvoMaterno() != null) avos.add(this.getAvoMaterno());
 
         return avos;
     }
