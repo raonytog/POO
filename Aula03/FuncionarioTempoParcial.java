@@ -9,4 +9,9 @@ public class FuncionarioTempoParcial extends Funcionario {
         this.horas = horas;
     }
 
+    @Override
+    public String toString() {
+        return getName() + ": " + getSalario() + " - Parcial";
+    }
+
 }

@@ -3,4 +3,9 @@ public class FuncionarioTempoIntegral extends Funcionario {
         super(name, salario);
     }
 
+    @Override
+    public String toString() {
+        return getName() + ": " + getSalario() + " - Integral";
+    }
+
 }
