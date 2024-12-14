@@ -26,7 +26,7 @@ Jardim da Penha
 João Paulo Almeida
 1000
 Barrack Obama
-1000000.50
+1000000,50
 Bob Dylan
 900000
 
