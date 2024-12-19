@@ -26,6 +26,7 @@ package q1;
 public class TestadorQ1 {
 
 	public static void main(String[] args) {
+
 		Funcionario barbara = new Funcionario("Barbara", 10000000, null);
 		Funcionario aline = new Funcionario("Aline", 1400, null);
 		Funcionario rayssa = new Funcionario("Rayssa", 98000000, null);
